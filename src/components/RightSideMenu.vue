@@ -77,12 +77,12 @@ export default {
   font-size: 16px;
 }
 .right-side-menu {
-  background-color: #03045e;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   width: 25%;
+  background-color: #03045e;
 }
 .avatar {
   width: 120px;

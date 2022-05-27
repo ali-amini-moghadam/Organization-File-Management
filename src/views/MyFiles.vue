@@ -1,24 +1,36 @@
 <template>
-  <div class="my-files-container position-relative">
-    <!-- List of my files -->
-    <div class="row gx-5 gy-3">
-      <div class="col-sm-6 col-md-3">
+  <div class="my-files-container">
+    <!-- List of my files (FIRST PART) -->
+    <div class="my-files-list row gx-5 gy-3 overflow-auto">
+      <div v-for="i in 10" class="col-sm-6 col-md-3">
         <File />
       </div>
     </div>
-    <CreateFileFolderSection />
+    <!--  Bottom section (SECOND PART)  -->
+    <div class="row file-folder-container bg-white rounded-top p-3 shadow">
+      <!--  Add File Modal Section  -->
+      <div class="col-sm-6 text-center">
+        <CreateFileForm />
+      </div>
+      <!--  Add Folder Section  -->
+      <div class="col-sm-6 text-center">
+        <Folder />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import File from "../components/File.vue";
-import CreateFileFolderSection from "../components/CreateFileFolderSection.vue";
+import CreateFileForm from "../components/CreateFileForm.vue";
+import Folder from "../components/Folder.vue";
 
 export default {
   name: "MyFiles",
   components: {
     File,
-    CreateFileFolderSection,
+    CreateFileForm,
+    Folder,
   },
   data: function () {
     return {
@@ -33,4 +45,20 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.my-files-list {
+  /*max-height: calc(100% - 85px) !important;*/
+  max-height: 450px !important;
+}
+.file-folder-container {
+  position: fixed;
+  bottom: 0;
+  right: 25%;
+  left: 0;
+  margin: 0;
+}
+.btn-close {
+  position: absolute;
+  right: 15px;
+}
+</style>
