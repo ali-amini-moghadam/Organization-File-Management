@@ -3,6 +3,7 @@
     <!-- Body Layout -->
     <div class="row">
       <!--  Right Side -->
+      <router-view name="login"></router-view>
       <div class="col-3">
         <!--  Right Side Menu Section  -->
         <RightSideMenu username="ali_alavi" access-level-type="کارمند" />

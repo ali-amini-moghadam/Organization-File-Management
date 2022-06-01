@@ -1,5 +1,5 @@
 <template>
-  <button class="btn btn-success w-50" data-bs-target="#AddFolderModal">
+  <button class="btn btn-primary w-50 disabled" data-bs-target="#AddFolderModal">
     <img
       src="../assets/images/add-folder.svg"
       alt="add-folder"

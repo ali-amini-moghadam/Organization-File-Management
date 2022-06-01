@@ -1,9 +1,13 @@
 <template>
   <div class="my-files-container">
     <!-- List of my files (FIRST PART) -->
-    <div class="my-files-list row gx-5 gy-3 overflow-auto">
-      <div v-for="i in 10" class="col-sm-6 col-md-3">
-        <File />
+    <div class="my-files-list row gx-5 gy-3 overflow-auto p-3">
+      <div v-for="i in 10" class="col-sm-6 col-md-3" :key="`my-file-${i}`">
+        <File
+          :url="`/files/${i}`"
+          name="File Title"
+          :show-triple-dot-button="true"
+        />
       </div>
     </div>
     <!--  Bottom section (SECOND PART)  -->

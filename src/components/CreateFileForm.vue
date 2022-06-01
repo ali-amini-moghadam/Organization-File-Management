@@ -1,7 +1,7 @@
 <template>
   <!--  Button Trigger Modal   -->
   <button
-    class="btn btn-success w-50"
+    class="btn btn-primary w-50"
     data-bs-toggle="modal"
     data-bs-target="#AddFileModal"
   >
@@ -37,13 +37,13 @@
           <!--  File title  -->
           <div class="mb-3">
             <label for="file-title-input" class="form-label"
-              >عنوان سند: *</label
+              >عنوان فایل: *</label
             >
             <input
               type="text"
               class="form-control"
               id="file-title-input"
-              placeholder="برای مثال: سند قرارداد همکاری"
+              placeholder="برای مثال: فایل قرارداد همکاری"
             />
           </div>
           <!--  Description  -->
@@ -53,8 +53,13 @@
               class="form-control"
               id="description-input"
               rows="3"
-              placeholder="در صورت لازم توضیحاتی در مورد سند بنویسید ..."
+              placeholder="در صورت لازم توضیحاتی در مورد فایل بنویسید ..."
             ></textarea>
+          </div>
+          <!--  Browse file  -->
+          <div class="mb-3">
+            <label for="formFile" class="form-label">انتخاب فایل: *</label>
+            <input class="form-control" type="file" id="formFile" />
           </div>
           <!--  Expire date  -->
           <div class="mb-3">
@@ -75,37 +80,31 @@
             <select class="form-select" id="file-access-levels">
               <option selected>یک سطح دسترسی انتخاب کنید</option>
               <option value="1">دسترسی فقط برای خود (شخصی)</option>
-              <option value="2">برای شخص دیگر</option>
               <option value="3">سطوح 2 (معاونان)</option>
               <option value="4">سطوح 3 (کارمندان)</option>
             </select>
           </div>
           <!--  Edit permission  -->
-          <div class="mb-3">
-            <label class="form-label me-2" for="edit-permission">
-              اعطای مجوز ویرایش سند *
-            </label>
-            <input
-              class="form-check-input float-end"
-              type="checkbox"
-              id="edit-permission"
-            />
-          </div>
-          <!--  Browse file  -->
-          <div class="mb-3">
-            <label for="formFile" class="form-label">انتخاب فایل: *</label>
-            <input class="form-control" type="file" id="formFile" />
-          </div>
+          <!--          <div class="mb-3">-->
+          <!--            <label class="form-label me-2" for="edit-permission">-->
+          <!--              اعطای مجوز ویرایش سند *-->
+          <!--            </label>-->
+          <!--            <input-->
+          <!--              class="form-check-input float-end"-->
+          <!--              type="checkbox"-->
+          <!--              id="edit-permission"-->
+          <!--            />-->
+          <!--          </div>-->
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-sm btn-success flex-grow-1 mx-4">
             <img
-              src="../assets/images/add.svg"
+              src="../assets/images/upload.svg"
               alt="upload-img"
               width="32"
               height="32"
             />
-            افزودن
+            بارگذاری فایل
           </button>
           <button
             type="button"
@@ -118,7 +117,7 @@
               width="32"
               height="32"
             />
-            لغو
+            لغو عملیات
           </button>
         </div>
       </div>
