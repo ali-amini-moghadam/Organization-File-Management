@@ -16,6 +16,10 @@
     url("../fonts/Vazir-Light-FD-WOL.woff2") format("woff2"),
     url("../fonts/Vazir-Thin-FD-WOL.woff2") format("woff2");
 }
+#app,
+.container > .row {
+  height: 100vh;
+}
 body {
   font-family: Vazir !important;
   background-color: #f5f5f5 !important;

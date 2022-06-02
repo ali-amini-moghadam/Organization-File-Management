@@ -22,7 +22,7 @@
       <SideMenuItem
         icon-url="./src/assets/images/my-files.svg"
         item-title="فایل‌های من"
-        navigation-url="/"
+        navigation-url="/my-files"
         @side-menu-item-clicked="menuItemSelected"
       />
       <SideMenuItem
@@ -54,21 +54,7 @@ export default {
     username: { type: String, required: true },
     accessLevelType: { type: String, required: true },
   },
-  methods: {
-    // when side menu item clicked
-    menuItemSelected(e, navigationUrl) {
-      let previousActiveMenu = document.querySelector(".menu-item.active");
-      previousActiveMenu.classList.remove("active");
-      if (e.target.tagName === "BUTTON") {
-        e.target.classList.add("active");
-      } else if (e.target.parentElement.tagName === "BUTTON") {
-        e.target.parentElement.classList.add("active");
-      }
-      // navigate to the URL
-      this.$router.push(navigationUrl);
-      // change the header title
-    },
-  },
+  methods: {},
 };
 </script>
 

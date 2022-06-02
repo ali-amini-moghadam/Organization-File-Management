@@ -4,7 +4,7 @@
     <div class="my-files-list row gx-5 gy-3 overflow-auto p-3">
       <div v-for="i in 10" class="col-sm-6 col-md-3" :key="`my-file-${i}`">
         <File
-          :url="`/files/${i}`"
+          :url="`/my-files/files/${i}`"
           name="File Title"
           :show-triple-dot-button="true"
         />
@@ -43,9 +43,9 @@ export default {
     };
   },
   emits: ["changeStates"],
-  created() {
-    this.$emit("changeStates", this.sectionTitle, this.menuItemOrder);
-  },
+  // created() {
+  //   this.$emit("changeStates", this.sectionTitle, this.menuItemOrder);
+  // },
 };
 </script>
 

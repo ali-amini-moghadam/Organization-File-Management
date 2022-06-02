@@ -1,11 +1,11 @@
 <template>
-  <button
-    @click="$emit('sideMenuItemClicked', $event, navigationUrl)"
+  <router-link
+    :to="navigationUrl"
     class="menu-item btn w-100 rounded-0 text-end"
   >
     <img class="menu-item-icon ms-3" :src="iconUrl" />
     <span class="text-white">{{ itemTitle }}</span>
-  </button>
+  </router-link>
 </template>
 
 <script>
@@ -15,9 +15,7 @@ export default {
     iconUrl: { type: String, required: true },
     navigationUrl: { type: String, required: true },
   },
-  methods: {
-    // set active state & change header title in Header.vue component
-  },
+  methods: {},
 };
 </script>
 
@@ -30,10 +28,10 @@ export default {
   font-size: 16px;
 }
 .menu-item:hover,
-.menu-item.active {
+.router-link-active {
   background-color: #0d6efd;
 }
-.menu-item.active::before {
+.router-link-active::before {
   content: "";
   display: inline-block;
   position: absolute;

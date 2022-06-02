@@ -14,9 +14,9 @@ export default {
     };
   },
   emits: ["changeStates"],
-  created() {
-    this.$emit("changeStates", this.sectionTitle, this.menuItemOrder);
-  },
+  // created() {
+  //   this.$emit("changeStates", this.sectionTitle, this.menuItemOrder);
+  // },
 };
 </script>
 

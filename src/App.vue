@@ -1,56 +1,9 @@
 <template>
-  <div class="container">
-    <!-- Body Layout -->
-    <div class="row">
-      <!--  Right Side -->
-      <router-view name="login"></router-view>
-      <div class="col-3">
-        <!--  Right Side Menu Section  -->
-        <RightSideMenu username="ali_alavi" access-level-type="کارمند" />
-      </div>
-      <!-- End of Right Side -->
-      <!-- Left Side (vertical stack)-->
-      <div class="col-9 vstack mt-3">
-        <!-- Header Section -->
-        <Header>{{ sectionTitle }}</Header>
-        <!-- Router View -->
-        <router-view @change-states="changeStates" class="mt-3"></router-view>
-      </div>
-      <!-- End of Left Side(vertical stack)-->
-    </div>
-    <!-- End of Body Layout -->
-  </div>
+  <router-view></router-view>
 </template>
 
 <script>
-import Header from "./components/Header.vue";
-import RightSideMenu from "./components/RightSideMenu.vue";
-
-export default {
-  components: {
-    Header,
-    RightSideMenu,
-  },
-  data: function () {
-    return {
-      sectionTitle: "",
-      username: "",
-      accessType: "",
-    };
-  },
-  computed: {
-    sideMenuItems: function () {
-      let items = document.querySelectorAll(".menu-item");
-      return items;
-    },
-  },
-  methods: {
-    changeStates: function (title, menuItemOrder) {
-      this.sectionTitle = title;
-      this.sideMenuItems[menuItemOrder - 1].classList.add("active");
-    },
-  },
-};
+export default {};
 </script>
 
 <style>
