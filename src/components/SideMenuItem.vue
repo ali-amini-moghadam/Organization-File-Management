@@ -1,6 +1,7 @@
 <template>
   <router-link
     :to="navigationUrl"
+    @click="$emit('side-menu-item-clicked', itemTitle)"
     class="menu-item btn w-100 rounded-0 text-end"
   >
     <img class="menu-item-icon ms-3" :src="iconUrl" />

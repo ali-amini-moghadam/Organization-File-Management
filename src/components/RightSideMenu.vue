@@ -20,22 +20,28 @@
     <!-- Menu Items -->
     <div class="side-menu-items mt-4">
       <SideMenuItem
-        icon-url="./src/assets/images/my-files.svg"
+        icon-url="../src/assets/images/my-files.svg"
         item-title="فایل‌های من"
         navigation-url="/my-files"
-        @side-menu-item-clicked="menuItemSelected"
+        @side-menu-item-clicked="
+          (title) => this.$emit('side-menu-item-clicked', title)
+        "
       />
       <SideMenuItem
-        icon-url="./src/assets/images/inbox.svg"
+        icon-url="../src/assets/images/inbox.svg"
         item-title="صندوق ورودی"
         navigation-url="/inbox"
-        @side-menu-item-clicked="menuItemSelected"
+        @side-menu-item-clicked="
+          (title) => this.$emit('side-menu-item-clicked', title)
+        "
       />
       <SideMenuItem
-        icon-url="./src/assets/images/administrator.svg"
+        icon-url="../src/assets/images/administrator.svg"
         item-title="مدیریت"
         navigation-url="/admin-panel"
-        @side-menu-item-clicked="menuItemSelected"
+        @side-menu-item-clicked="
+          (title) => this.$emit('side-menu-item-clicked', title)
+        "
       />
     </div>
     <!-- End of Menu Items -->

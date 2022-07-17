@@ -4,7 +4,11 @@
       <!--  Right Side -->
       <div class="col-3">
         <!--  Right Side Menu Section  -->
-        <RightSideMenu username="ali_alavi" access-level-type="کارمند" />
+        <RightSideMenu
+          @side-menu-item-clicked="changeSectionTitle"
+          username="ali_alavi"
+          access-level-type="کارمند"
+        />
       </div>
       <!-- End of Right Side -->
       <!-- Left Side (vertical stack)-->
@@ -28,6 +32,7 @@ export default {
     Header,
     RightSideMenu,
   },
+  emits: ["sideMenuItemClicked"],
   data: function () {
     return {
       sectionTitle: "",
@@ -35,17 +40,10 @@ export default {
       accessType: "",
     };
   },
-  computed: {
-    sideMenuItems: function () {
-      let items = document.querySelectorAll(".menu-item");
-      return items;
-    },
-  },
   methods: {
-    // changeStates: function (title, menuItemOrder) {
-    //   this.sectionTitle = title;
-    //   this.sideMenuItems[menuItemOrder - 1].classList.add("active");
-    // },
+    changeSectionTitle: function (sectionTitle) {
+      this.sectionTitle = sectionTitle;
+    },
   },
 };
 </script>
